@@ -1,24 +1,21 @@
-import React from 'react';
+import React, { FunctionComponent, useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
 interface iTestProp {
   message: string;
 }
 
-export default class Test extends React.Component<iTestProp> {
 
-  constructor(props: any) {
-    super(props);
-  }
+export const Test: FunctionComponent<{ test?: iTestProp}> = ({test = {message: ''}}) => {
+  
+  const [message, setMessage] = useState(test);
 
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text>{this.props.message}</Text>
-      </View>
-    );
-  }
-}
+  return (
+    <View style={styles.container}>
+      <Text>{message}</Text>
+    </View>
+  );
+} 
 
 const styles = StyleSheet.create({
   container: {
