@@ -1,10 +1,10 @@
 import React from 'react';
-import Test from './components/test';
+import Test from './src/components/test';
 
 export default class App extends React.Component {
   render() {
     return (
-      <Test></Test>
+      <Test message='hogehoge'></Test>
     );
   }
 }
