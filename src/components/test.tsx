@@ -5,14 +5,10 @@ interface iTestProp {
   message: string;
 }
 
-export const Test: FunctionComponent<{ test?: iTestProp }> = ({
-  test = { message: "" }
-}) => {
-  const [message, setMessage] = useState(test);
-
+export const Test: FunctionComponent<iTestProp> = props => {
   return (
     <View style={styles.container}>
-      <Text>{message}</Text>
+      <Text>{props.message}</Text>
     </View>
   );
 };
