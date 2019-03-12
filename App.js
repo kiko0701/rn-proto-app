@@ -1,10 +1,9 @@
-import React from 'react';
-import Test from './src/components/test';
+import React from "react";
+import { HeaderTabComponent } from "./src/components/HeaderTabComponent/HeaderTabComponent";
+import { defaultHeaderTabs } from "./src/const/HeaderTab";
 
 export default class App extends React.Component {
   render() {
-    return (
-      <Test message='hogehoge'></Test>
-    );
+    return <HeaderTabComponent tabs={defaultHeaderTabs} />;
   }
 }
