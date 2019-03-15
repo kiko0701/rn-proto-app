@@ -1,25 +1,25 @@
-import { iHeaderTabProp, TabRenderedComponent } from "../components/HeaderTabComponent/HeaderTabComponent.interface";
-import { CardListComponent } from "../components/CardListComponent";
+import { TabItem } from "../components/HeaderTabComponent/HeaderTabComponent.interface";
+import { BodyModificationPage } from "../pages/BodyModificationPage";
 import React from "react";
 
-export const defaultHeaderTabs: TabRenderedComponent[] = [
+export const defaultHeaderTabs: TabItem[] = [
   {
     tabName: "肉体改造",
-    renderPage: <CardListComponent />
+    renderPage: <BodyModificationPage />
   },
   {
     tabName: "ホーム",
   },
   {
     tabName: "ダイエット",
-    renderPage: <CardListComponent />
+    renderPage: <BodyModificationPage />
   },
   {
     tabName: "ヨガインストラクター",
-    renderPage: <CardListComponent />
+    renderPage: <BodyModificationPage />
   },
   {
     tabName: "健康",
-    renderPage: <CardListComponent />
+    renderPage: <BodyModificationPage />
   },
 ];

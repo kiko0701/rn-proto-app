@@ -1,15 +1,15 @@
 /**
  * ヘッダータブコンポーネント用型定義
  */
-export interface TabRenderedComponent {
+export interface TabItem {
   tabName?: string;
   renderPage?: React.ReactNode;
 }
 
-export interface iHeaderTabProp {
-  tabs: TabRenderedComponent[];
+export interface HeaderTabComponentProps {
+  tabs: TabItem[];
 }
 
-export interface iHeaderTabState {
+export interface HeaderTabComponentState {
   tabName: string;
 }

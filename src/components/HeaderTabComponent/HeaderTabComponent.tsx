@@ -12,19 +12,18 @@ import {
   Badge,
 } from "native-base";
 import { StyleSheet } from "react-native";
-import { iHeaderTabProp, iHeaderTabState, TabRenderedComponent } from './HeaderTabComponent.interface';
-import { CardListComponent } from "../CardListComponent";
+import { HeaderTabComponentProps, HeaderTabComponentState } from './HeaderTabComponent.interface';
 
 /**
  * todo: Functional Componentに書き換える
  */
-export class HeaderTabComponent extends React.Component<iHeaderTabProp, iHeaderTabState> {
-  constructor(props: iHeaderTabProp) {
+export class HeaderTabComponent extends React.Component<HeaderTabComponentProps, HeaderTabComponentState> {
+
+  constructor(props: HeaderTabComponentProps) {
     super(props);
   }
 
   render() {
-    console.log(this.props.tabs);
     return (
       <Container>
         <Header hasTabs>
@@ -38,8 +37,8 @@ export class HeaderTabComponent extends React.Component<iHeaderTabProp, iHeaderT
         </Header>
         <Tabs renderTabBar={() => <ScrollableTab />}>
           {this.props.tabs.map(tab => (
-            <Tab heading={tab.tabName || ''}>
-              {tab.renderPage}
+            <Tab heading={tab.tabName || 'hoge'}>
+              {tab.renderPage || null}
             </Tab>
           ))}
         </Tabs>

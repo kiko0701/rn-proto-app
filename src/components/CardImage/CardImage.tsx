@@ -1,20 +1,19 @@
 import React from "react";
 import { Container, Content, Card, CardItem, Thumbnail, Text, Button, Icon, Left, Body } from 'native-base';
 import { Image } from "react-native";
+import { CardImageProps } from "./CardImage.interface";
 
 /**
  * todo: Functional Componentに書き換える
  */
-export class CardListComponent extends React.Component<{}, { uri: string }> {
-  constructor(props: any) {
-    super(props);
-    this.state = {
-      uri: ''
+export class CardImage extends React.Component<CardImageProps> {
+  constructor(props: CardImageProps) {
+    props = {
+      title: 'aaaa',
+      uri: 'aaa'
     }
-  }
-
-  componentWillMount() {
-    this.setState({ uri: 'https://harmony-naturally.jp/wp-content/uploads/2018/09/dfa6a5a0e360700dd5f5c60e379300d0.jpg' })
+    console.log(props);
+    super(props);
   }
 
   render() {
@@ -32,11 +31,11 @@ export class CardListComponent extends React.Component<{}, { uri: string }> {
             </CardItem>
             <CardItem cardBody>
               <Image
-                source={{ uri: this.state.uri }}
+                source={{ uri: this.props.uri || 'hoge' }}
                 style={{ height: 200, flex: 1 }} />
             </CardItem>
             <CardItem>
-              <Text>筋トレ最高！</Text>
+              <Text>{this.props.title || 'hoge'}</Text>
             </CardItem>
             <CardItem>
               <Left>
